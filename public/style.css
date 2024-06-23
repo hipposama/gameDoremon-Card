@@ -1,0 +1,215 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#controls button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#controls button:hover {
+    background-color: #45a049;
+}
+
+#controls input {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#gameArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#roomCodeDisplay,
+#deckCountDisplay {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#cardDisplay {
+    width: 300px;
+    height: 450px;
+    cursor: pointer;
+    background: radial-gradient(circle, lightgreen, green);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 62px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+#cardRuleDisplay {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.card .top-left,
+.card .bottom-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+.card .top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.card .bottom-right {
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(180deg);
+}
+
+.card .center {
+    flex: 1;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.card .rank {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.card .suit {
+    font-size: 28px;
+}
+
+.card.hearts .rank,
+.card.hearts .suit,
+.card.hearts .center span {
+    color: rgb(158, 0, 0);
+}
+
+.card.diamonds .rank,
+.card.diamonds .suit,
+.card.diamonds .center span {
+    color: rgb(0, 0, 160);
+}
+
+.card.clubs .rank,
+.card.clubs .suit,
+.card.clubs .center span {
+    color: rgb(0, 160, 0);
+}
+
+.card.spades .rank,
+.card.spades .suit,
+.card.spades .center span {
+    color: rgb(0, 0, 0);
+}
+
+.card .large-suit,
+.card .jack,
+.card .queen,
+.card .king {
+    font-size: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#actionButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#resetDeckBtn, #leaveRoomBtn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#resetDeckBtn:hover, #leaveRoomBtn:hover {
+    background-color: #e53935;
+}
+
+@media (max-width: 768px) {
+    #cardDisplay {
+        width: 250px;
+        height: 375px;
+        font-size: 52px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card .rank {
+        font-size: 32px;
+    }
+
+    .card .suit {
+        font-size: 24px;
+    }
+
+    .card .large-suit,
+    .card .jack,
+    .card .queen,
+    .card .king {
+        font-size: 135px;
+    }
+
+    #controls button, #leaveRoomBtn, #resetDeckBtn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

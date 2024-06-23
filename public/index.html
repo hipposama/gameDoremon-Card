@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="controls">
+        <button id="createRoomBtn">Create Room</button>
+        <button id="joinRoomBtn">Join Room</button>
+        <input type="text" id="roomCodeInput" placeholder="Enter room code" style="display:none;">
+        <button id="confirmJoinBtn" style="display:none;">Join</button>
+    </div>
+    <div id="gameArea" style="display:none;">
+        <div id="cardRuleDisplay"></div>
+        <div id="cardDisplay"></div>
+        <div id="roomCodeDisplay">Room: <span id="roomCode"></span></div>
+        <div id="deckCountDisplay">Cards left in deck: <span id="deckCount">0</span></div>
+        <div id="actionButtons">
+            <button id="resetDeckBtn" style="display:none;">Reset Deck</button>
+            <button id="leaveRoomBtn" style="display:none;">Leave Room</button>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
